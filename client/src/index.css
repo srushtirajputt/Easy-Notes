@@ -1,0 +1,67 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Inject Tailwind's base styles, component classes, and utility classes */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   CUSTOM BASE STYLES
+   ============================================= */
+@layer base {
+  /* Apply Inter font and smooth scrolling to the whole page */
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  /* Dark mode: deep dark background */
+  body {
+    @apply bg-slate-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300;
+  }
+}
+
+/* =============================================
+   CUSTOM COMPONENT CLASSES
+   ============================================= */
+@layer components {
+  /* Glass card effect — frosted glass look */
+  .glass-card {
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 rounded-2xl shadow-lg;
+  }
+
+  /* Primary button style */
+  .btn-primary {
+    @apply bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700
+           text-white font-semibold px-5 py-2.5 rounded-xl
+           transition-all duration-200 transform hover:scale-105 active:scale-95
+           shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40;
+  }
+
+  /* Danger button style */
+  .btn-danger {
+    @apply bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700
+           text-white font-semibold px-4 py-2 rounded-xl
+           transition-all duration-200 transform hover:scale-105 active:scale-95
+           shadow-lg shadow-rose-500/25;
+  }
+
+  /* Secondary/outline button */
+  .btn-secondary {
+    @apply bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200
+           border border-gray-200 dark:border-gray-600
+           font-semibold px-4 py-2 rounded-xl
+           transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-600
+           transform hover:scale-105 active:scale-95;
+  }
+
+  /* Input field style */
+  .input-field {
+    @apply w-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600
+           rounded-xl px-4 py-3 text-gray-900 dark:text-gray-100
+           placeholder-gray-400 dark:placeholder-gray-500
+           focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent
+           transition-all duration-200;
+  }
+}
